@@ -1,4 +1,6 @@
+import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { truncate } from 'fs';
 
 @Component({
   selector: 'app-equipment',
@@ -27,5 +29,11 @@ export class EquipmentComponent implements OnInit {
    ngOnInit() { }
 
    // Code your addItem function here:
+   addItem(item: object, dynamicString): boolean {
+    this.cargoHold.push(item);
+    this.cargoMass += item['mass'];
+    item['dynamicString']
+    return (this.maximumAllowedMass - this.cargoMass) <= 200;
+    }
    
 }
